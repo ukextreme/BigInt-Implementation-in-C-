@@ -428,15 +428,15 @@ istream &operator>>(istream &in,BigInt&a){
     for (int i = n - 1; i >= 0;i--){
         if(!isdigit(s[i]))
             throw("INVALID NUMBER");
-        a.digits[n - i - 1] = s[i];
+        a.digits[n - i - 1] = s[i] - '0';
     }
     return in;
 }
 
 ostream &operator<<(ostream &out,const BigInt &a){
     for (int i = a.digits.size() - 1; i >= 0;i--)
-        cout << (short)a.digits[i];
-    return cout;
+        out << (short)a.digits[i];
+    return out;
 }
 
 //Driver code with some examples
